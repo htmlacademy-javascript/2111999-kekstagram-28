@@ -3,7 +3,7 @@ import {resetValueScale} from './scale.js';
 import {resetEffects} from './effect.js';
 import {pristine} from './validation.js';
 
-const FORMATS_FILE = ['jpeg', 'png', 'jpg'];
+const FORMATS = ['jpeg', 'png', 'jpg'];
 
 const bodyElement = document.querySelector('body');
 const inputPictureElement = document.querySelector('.img-upload__input');
@@ -64,7 +64,7 @@ inputPictureElement.addEventListener('change',() => {
   const file = inputPictureElement.files[0];
   const fileName = file.name.toLowerCase();
 
-  const matches = FORMATS_FILE.some((it) => fileName.endsWith(it));
+  const matches = FORMATS.some((it) => fileName.endsWith(it));
 
   if (matches) {
     displayPicture(file);

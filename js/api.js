@@ -24,6 +24,9 @@ const getData = (onSuccess) => {
     )
     .then((photos) => {
       onSuccess(photos);
+    })
+    .catch(() => {
+      showAlert('Не удалосось загрузить данные. Попробуйте обновить страницу.');
     });
 };
 
